@@ -1,4 +1,3 @@
-MAKE = make
 JAVA_MODELS = java
 C_MODELS = c
 CPP_MODELS = cpp
@@ -34,17 +33,17 @@ java: $(JAVA_MODELS_JAR)
 clang: $(C_MODELS_FILE) $(CPP_MODELS_FILE) $(OBJC_MODELS_FILE)
 
 $(JAVA_MODELS_JAR): $(JAVA_MODELS_SOURCES) $(INFERANALYZE) $(INFERJAVA) $(JAVA_SCRIPTS)
-	make -C $(JAVA_MODELS)
+	$(MAKE) -C $(JAVA_MODELS)
 
 $(C_MODELS_FILE): $(C_MODELS_SOURCES) $(INFERANALYZE) $(INFERCLANG)
-	make -C $(C_MODELS) install
+	$(MAKE) -C $(C_MODELS) install
 
 $(CPP_MODELS_FILE): $(CPP_MODELS_SOURCES) $(INFERANALYZE) $(INFERCLANG)
-	make -C $(CPP_MODELS) install
+	$(MAKE) -C $(CPP_MODELS) install
 
 $(OBJC_MODELS_FILE): $(OBJC_MODELS_SOURCES) $(INFERANALYZE) $(INFERCLANG)
 ifneq (, $(shell which xcode-select 2>&-))
-	make -C $(OBJC_MODELS) install
+	$(MAKE) -C $(OBJC_MODELS) install
 else
 	@echo "Xcode not installed or platform $(PLATFORM) not supported for objc models, skipping."
 endif

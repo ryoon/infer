@@ -1,25 +1,25 @@
 
 all:
-	make -C arithmetic
-	make -C assertions
-	make -C attributes
-	make -C initialization
-	make -C local_vars
-	make -C null_dereference
-	make -C resource_leaks
-	make -C memory_leaks
-	make -C lists
-	make -C dangling_deref
+	$(MAKE) -C arithmetic
+	$(MAKE) -C assertions
+	$(MAKE) -C attributes
+	$(MAKE) -C initialization
+	$(MAKE) -C local_vars
+	$(MAKE) -C null_dereference
+	$(MAKE) -C resource_leaks
+	$(MAKE) -C memory_leaks
+	$(MAKE) -C lists
+	$(MAKE) -C dangling_deref
 
 clean:
-	make -C arithmetic clean
-	make -C assertions clean
-	make -C attributes clean
-	make -C initialization clean
-	make -C local_vars clean
-	make -C null_dereference clean
-	make -C resource_leaks clean
-	make -C memory_leaks
-	make -C lists
-	make -C dangling_deref
+	$(MAKE) -C arithmetic clean
+	$(MAKE) -C assertions clean
+	$(MAKE) -C attributes clean
+	$(MAKE) -C initialization clean
+	$(MAKE) -C local_vars clean
+	$(MAKE) -C null_dereference clean
+	$(MAKE) -C resource_leaks clean
+	$(MAKE) -C memory_leaks
+	$(MAKE) -C lists
+	$(MAKE) -C dangling_deref
 

@@ -11,21 +11,21 @@ SRCDIR = src
 all: clang java llvm checkCopyright
 
 java:
-	make -C $(SRCDIR) java
-	make -C $(ANNOTATIONS)
-	make -C $(MODELS) java
+	$(MAKE) -C $(SRCDIR) java
+	$(MAKE) -C $(ANNOTATIONS)
+	$(MAKE) -C $(MODELS) java
 
 clang:
-	make -C $(SRCDIR) clang
-	make -C $(MODELS) clang
+	$(MAKE) -C $(SRCDIR) clang
+	$(MAKE) -C $(MODELS) clang
 
 llvm:
-	make -C $(SRCDIR) llvm
+	$(MAKE) -C $(SRCDIR) llvm
 
 checkCopyright:
-	make -C $(SRCDIR) checkCopyright
+	$(MAKE) -C $(SRCDIR) checkCopyright
 
 clean:
-	make -C $(SRCDIR) clean
-	make -C $(ANNOTATIONS) clean
-	make -C $(MODELS) clean
+	$(MAKE) -C $(SRCDIR) clean
+	$(MAKE) -C $(ANNOTATIONS) clean
+	$(MAKE) -C $(MODELS) clean

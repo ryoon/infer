@@ -12,7 +12,7 @@ default: run_infer
 .PHONY: run_infer install clean
 
 run_infer: clean
-	$(INFER) -o $(CWD)/out --models_mode --no_failures_allowed -- make -C src -j
+	$(INFER) -o $(CWD)/out --models_mode --no_failures_allowed -- $(MAKE) -C src -j
 
 install: run_infer
 	cp out/specs/*.specs $(LIB_SPECS)
@@ -21,4 +21,4 @@ install: run_infer
 
 clean:
 	if [ -a $(C_MODELS_FILE) ];then rm $(C_MODELS_FILE);fi
-	make -C src clean
+	$(MAKE) -C src clean
